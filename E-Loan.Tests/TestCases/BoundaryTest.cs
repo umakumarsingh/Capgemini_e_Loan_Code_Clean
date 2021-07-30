@@ -238,5 +238,357 @@ namespace E_Loan.Tests.TestCases
             await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_ValidateMobileNumber=" + res + "\n");
             return res;
         }
+        /// <summary>
+        /// Test to validate loan master loan name connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_LoanName_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.LoanName.ToString().Length;
+            if (result.LoanName.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_LoanName_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master loan BusinessStructure connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_BusinessStructure_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.BusinessStructure.ToString().Length;
+            if (result.BusinessStructure.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_BusinessStructure_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master loan Billing_Indicator connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_Billing_Indicator_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.Billing_Indicator.ToString().Length;
+            if (result.Billing_Indicator.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_Billing_Indicator_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master loan Tax_Indicator connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_Tax_Indicator_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.Tax_Indicator.ToString().Length;
+            if (result.Tax_Indicator.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_Tax_Indicator_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master loan Tax_Indicator connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_ContactAddress_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.ContactAddress.ToString().Length;
+            if (result.ContactAddress.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_ContactAddress_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master loan Status connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanMaster_LoanStatus_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            var actualLength = _loanMaster.Status.ToString().Length;
+            if (result.Status.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanMaster_LoanStatus_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master Loan Process trans_Id connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanProcesstrans_Id_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            var actualLength = _loanProcesstrans.Id.ToString().Length;
+            if (result.Id.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanProcesstrans_Id_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master Loan AcresofLand connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanProcesstrans_AcresofLand_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            var actualLength = _loanProcesstrans.AcresofLand.ToString().Length;
+            if (result.AcresofLand.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanProcesstrans_AcresofLand_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master Loan Landvalueinrs connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanProcesstrans_LandValueinRs_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            var actualLength = _loanProcesstrans.LandValueinRs.ToString().Length;
+            if (result.LandValueinRs.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanProcesstrans_LandValueinRs_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master Loan Landvalueinrs connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanProcesstrans_SuggestedAmount_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            var actualLength = _loanProcesstrans.SuggestedAmount.ToString().Length;
+            if (result.SuggestedAmount.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanProcesstrans_SuggestedAmount_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan master Loan Manager Id connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanProcesstrans_ManagerId_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            var actualLength = _loanProcesstrans.ManagerId.ToString().Length;
+            if(result.ManagerId.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanProcesstrans_ManagerId_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan Approval Loan Sanctioned Amount connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanApprovaltrans_SanctionedAmount_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            managerservice.Setup(repo => repo.SanctionedLoan(_loanApprovaltrans)).ReturnsAsync(_loanApprovaltrans);
+            var result = await _managerServices.SanctionedLoan(_loanApprovaltrans);
+            var actualLength = _loanApprovaltrans.SanctionedAmount.ToString().Length;
+            if (result.SanctionedAmount.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanApprovaltrans_SanctionedAmount_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan Approval Loan Termofloan connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanApprovaltrans_Termofloan_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            managerservice.Setup(repo => repo.SanctionedLoan(_loanApprovaltrans)).ReturnsAsync(_loanApprovaltrans);
+            var result = await _managerServices.SanctionedLoan(_loanApprovaltrans);
+            var actualLength = _loanApprovaltrans.Termofloan.ToString().Length;
+            if (result.Termofloan.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanApprovaltrans_Termofloan_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan Approval Loan Payment Start Date connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanApprovaltrans_PaymentStartDate_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            managerservice.Setup(repo => repo.SanctionedLoan(_loanApprovaltrans)).ReturnsAsync(_loanApprovaltrans);
+            var result = await _managerServices.SanctionedLoan(_loanApprovaltrans);
+            var actualLength = _loanApprovaltrans.PaymentStartDate.ToString().Length;
+            if (result.PaymentStartDate.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanApprovaltrans_PaymentStartDate_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan Approval Loan Loan Closer Date connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanApprovaltrans_LoanCloserDate_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            managerservice.Setup(repo => repo.SanctionedLoan(_loanApprovaltrans)).ReturnsAsync(_loanApprovaltrans);
+            var result = await _managerServices.SanctionedLoan(_loanApprovaltrans);
+            var actualLength = _loanApprovaltrans.LoanCloserDate.ToString().Length;
+            if (result.LoanCloserDate.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanApprovaltrans_LoanCloserDate_NotEmpty=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate loan Approval Loan Monthly Payment connaot be blanks.
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_LoanApprovaltrans_MonthlyPayment_NotEmpty()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            managerservice.Setup(repo => repo.SanctionedLoan(_loanApprovaltrans)).ReturnsAsync(_loanApprovaltrans);
+            var result = await _managerServices.SanctionedLoan(_loanApprovaltrans);
+            var actualLength = _loanApprovaltrans.MonthlyPayment.ToString().Length;
+            if (result.MonthlyPayment.ToString().Length == actualLength)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_boundary_revised.txt", "Testfor_LoanApprovaltrans_MonthlyPayment_NotEmpty=" + res + "\n");
+            return res;
+        }
     }
 }
