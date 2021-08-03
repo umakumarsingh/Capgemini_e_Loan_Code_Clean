@@ -199,5 +199,154 @@ namespace E_Loan.Tests.TestCases
             await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_Validate_InvlidSanctionedLoanTrans=" + res + "\n");
             return res;
         }
+        /// <summary>
+        /// Test to validate if user pass the null loan id or 0 while finding mortage, return null
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_Validate_ifInvalidLoanIdIsPassedandLoanNotFound()
+        {
+            //Arrange
+            bool res = false;
+            var loanId = 0;
+            //Act
+            customerservice.Setup(repo => repo.AppliedLoanStatus(loanId)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.AppliedLoanStatus(loanId);
+            if (result != null || result.LoanId > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_Validate_ifInvalidLoanIdIsPassedandLoanNotFound=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan name must be greater then 5 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_Validate_InvlidLoanNamePassed_LoanNameMinFiveCharactor()
+        {
+            //Arrange
+            bool res = false;
+            _loanProcesstrans = null;
+            //Act
+            customerservice.Setup(repo => repo.ApplyMortgage(_loanMaster)).ReturnsAsync(_loanMaster);
+            var result = await _customerServices.ApplyMortgage(_loanMaster);
+            if (result != null && result.LoanName.Length > 5)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_Validate_InvlidLoanNamePassed_LoanNameMinFiveCharactor=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan process id must be greater then 0 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_VaidateLoanProcessIdIsvalidorNot_Return()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            if(result != null && result.Id > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_VaidateLoanProcessIdIsvalidorNot_Return=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan process acres of land must be greater then 0 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_VaidateLoanProcess_AcresOfLand_IsvalidorNot_Return()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            if (result != null && result.AcresofLand > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_VaidateLoanProcess_AcresOfLand_IsvalidorNot_Return=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan process Land ValueinRs must be greater then 0 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_VaidateLoanProcess_LandValueinRs_IsvalidorNot_Return()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            if (result != null && result.LandValueinRs > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_VaidateLoanProcess_LandValueinRs_IsvalidorNot_Return=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan process Suggested Amount must be greater then 0 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_VaidateLoanProcess_SuggestedAmount_IsvalidorNot_Return()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            if (result != null && result.SuggestedAmount > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_VaidateLoanProcess_SuggestedAmount_IsvalidorNot_Return=" + res + "\n");
+            return res;
+        }
+        /// <summary>
+        /// Test to validate if loan process manager Id must be greater then 0 charactor
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task<bool> Testfor_VaidateLoanProcess_ManagerId_IsvalidorNot_Return()
+        {
+            //Arrange
+            bool res = false;
+            //Act
+            clerkservice.Setup(repo => repo.ProcessLoan(_loanProcesstrans)).ReturnsAsync(_loanProcesstrans);
+            var result = await _clerkServices.ProcessLoan(_loanProcesstrans);
+            if (result != null && result.ManagerId > 0)
+            {
+                res = true;
+            }
+            //Asert
+            //final result displaying in text file
+            await File.AppendAllTextAsync("../../../../output_exception_revised.txt", "Testfor_VaidateLoanProcess_ManagerId_IsvalidorNot_Return=" + res + "\n");
+            return res;
+        }
     }
 }
